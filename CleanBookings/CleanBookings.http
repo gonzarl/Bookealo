@@ -1,0 +1,6 @@
+@CleanBookings_HostAddress = http://localhost:5254
+
+GET {{CleanBookings_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
