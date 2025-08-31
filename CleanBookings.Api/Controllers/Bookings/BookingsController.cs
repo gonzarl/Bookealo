@@ -1,12 +1,13 @@
 ﻿using CleanBookings.Application.Bookings.GetBooking;
 using CleanBookings.Application.Bookings.ReserveBooking;
-
 using MediatR;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanBookings.Api.Controllers.Bookings;
 
+[Authorize]
 [ApiController]
 [Route("api/bookings")]
 public class BookingsController : ControllerBase
