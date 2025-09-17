@@ -1,5 +1,5 @@
-﻿using CleanBookings.Application.Abstractions.Messaging;
-using CleanBookings.Application.Authentication;
+﻿using CleanBookings.Application.Abstractions.Authentication;
+using CleanBookings.Application.Abstractions.Messaging;
 using CleanBookings.Domain.Abstractions;
 using CleanBookings.Domain.Users;
 

@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Json;
 
-using CleanBookings.Application.Authentication;
+using CleanBookings.Application.Abstractions.Authentication;
 using CleanBookings.Domain.Users;
 using CleanBookings.Infrastructure.Authentication.Models;
 

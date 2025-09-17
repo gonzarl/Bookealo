@@ -1,6 +1,6 @@
 ﻿using CleanBookings.Domain.Users;
 
-namespace CleanBookings.Application.Authentication;
+namespace CleanBookings.Application.Abstractions.Authentication;
 
 public interface IAuthenticationService
 {

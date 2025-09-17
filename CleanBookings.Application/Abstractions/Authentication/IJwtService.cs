@@ -1,6 +1,6 @@
 ﻿using CleanBookings.Domain.Abstractions;
 
-namespace CleanBookings.Application.Authentication;
+namespace CleanBookings.Application.Abstractions.Authentication;
 
 public interface IJwtService
 {

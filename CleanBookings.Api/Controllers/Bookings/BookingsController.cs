@@ -1,7 +1,6 @@
 ﻿using CleanBookings.Application.Bookings.GetBooking;
 using CleanBookings.Application.Bookings.ReserveBooking;
 using MediatR;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,6 +46,6 @@ public class BookingsController : ControllerBase
             return BadRequest(result.Error);
         }
 
-        return CreatedAtAction(nameof(GetBooking), new { id = result.Value, result.Value });
+        return CreatedAtAction(nameof(GetBooking), new { id = result.Value }, result.Value);
     }
 }

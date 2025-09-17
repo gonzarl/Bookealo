@@ -1,8 +1,9 @@
-﻿using CleanBookings.Application.Users.LogInUser;
+﻿using CleanBookings.Application.Users.GetLoggedInUser;
+using CleanBookings.Application.Users.LogInUser;
 using CleanBookings.Application.Users.RegisterUser;
+using CleanBookings.Infrastructure.Authorization;
 
 using MediatR;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,17 @@ public class UsersController : ControllerBase
     public UsersController(ISender sender)
     {
         _sender = sender;
+    }
+
+    [HttpGet("me")]
+    [HasPermission(Permissions.UsersRead)]
+    public async Task<IActionResult> GetLoggedInUser(CancellationToken cancellationToken)
+    {
+        var query = new GetLoggedInUserQuery();
+
+        var result = await _sender.Send(query, cancellationToken);
+
+        return Ok(result.Value);
     }
 
     [AllowAnonymous]
