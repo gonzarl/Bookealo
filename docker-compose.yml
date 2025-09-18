@@ -19,6 +19,7 @@ services:
         - ./containers/database:/var/lib/postgresql/data
     ports:
         - 15432:5432 
+  
   cleanbookings-idp:
     image: quay.io/keycloak/keycloak:23.0.0
     container_name: CleanBookings.Identity
@@ -31,4 +32,14 @@ services:
         - ./.files:/opt/keycloak/data/import
     ports:
         - 18080:8080
-    
+ 
+  cleanbookings-seq:
+    image: datalust/seq:latest
+    container_name: CleanBookings.Seq
+    environment:
+        - ACCEPT_EULA=Y
+        - SEQ_FIRSTRUN_ADMINPASSWORD=admin
+    ports:
+        - 5341:5341
+        - 8081:80
+
